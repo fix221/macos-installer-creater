@@ -21,7 +21,9 @@ jobs:
           wget https://swscan.apple.com/content/catalogs/others/index-26seed-26-15-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog -o /tmp/catalog.xml
           # 查看文件内容
           cat /tmp/catalog.xml
-          
+          #跑extract_urls.py脚本
+          python3 extract_urls.py
+          # python3 
 
           # 执行其他命令...
           softwareupdate --list-full-installers
