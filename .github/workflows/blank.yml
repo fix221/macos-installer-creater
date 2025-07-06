@@ -1,0 +1,30 @@
+name: Run Command on macOS
+
+on:
+  # 触发工作流的条件，可以是 push、pull_request 等
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: macos-latest  # 指定运行环境为最新的 macOS
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4  # 检出代码到运行环境
+        
+      - name: Run macOS command
+        run: |
+          # 在这里编写你要执行的终端命令
+          # 示例：打印当前目录、查看 macOS 版本
+          sw_vers
+          # 执行其他命令...
+          echo "Hello from macOS!"
+          
+      - name: Run another command
+        run: |
+          # 可以添加多个步骤执行不同的命令
+          # 示例：创建文件并写入内容
+          mkdir -p output
+          echo "This is a test" > output/test.txt
+          ls -la output/
