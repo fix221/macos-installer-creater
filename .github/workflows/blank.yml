@@ -19,6 +19,7 @@ jobs:
           # 示例：打印当前目录、查看 macOS 版本
           sw_vers
           # 执行其他命令...
+          softwareupdate --list-full-installers
           echo "Hello from macOS!"
           
       - name: Run another command
